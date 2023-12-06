@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y emacs && apt-get install ffmpeg libsm6 libxext6  -y &&\
+RUN apt-get update && apt-get upgrade -y && apt-get install -y emacs && apt-get install libgl1 &&\
     apt-get autoremove -y
 	
 # Install software 
