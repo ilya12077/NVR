@@ -3,7 +3,6 @@ import os
 from threading import Thread
 
 import cv2
-import requests
 from flask import Flask, request
 from waitress import serve
 
