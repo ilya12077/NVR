@@ -13,6 +13,7 @@ RUN git clone https://github.com/ilya12077/NVR.git
 	
 RUN cp -a ./NVR/. /etc/nvr/
 RUN rm -r -f ./NVR/
+RUN mkdir /etc/nvr/data
 
 RUN pip install opencv-python requests Flask waitress
 

@@ -46,7 +46,7 @@ def camrecord(camid: [1, 2]):
     if camid == 2:
         name = 'Elevator'
         fps = 3
-        cameraCapture = cv2.VideoCapture('http://second-espcam.local:80')
+        cameraCapture = cv2.VideoCapture('http://192.168.1.11:80')
     elif camid == 1:
         name = 'Hall'
         fps = 3
@@ -55,7 +55,7 @@ def camrecord(camid: [1, 2]):
         return -1
     size = (int(cameraCapture.get(cv2.CAP_PROP_FRAME_WIDTH)),
             int(cameraCapture.get(cv2.CAP_PROP_FRAME_HEIGHT)))
-    videoWriter = cv2.VideoWriter(f'{name} - {datetime.datetime.now().strftime("%m.%d.%Y - %H.%M.%S")}.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps, size)
+    videoWriter = cv2.VideoWriter(f'./data/{name} - {datetime.datetime.now().strftime("%m.%d.%Y - %H.%M.%S")}.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps, size)
     while cam1Record if camid == 1 else cam2Record:
         success, frame = cameraCapture.read()
         frame = cv2.putText(frame, datetime.datetime.now().strftime("%m.%d.%Y - %H:%M:%S"),
