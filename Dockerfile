@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y emacs && apt-get install libgl1 &&\
+RUN apt-get update && apt-get upgrade -y && apt-get install -y emacs && apt-get install libgl1 -y &&\
     apt-get autoremove -y
 	
 # Install software 
